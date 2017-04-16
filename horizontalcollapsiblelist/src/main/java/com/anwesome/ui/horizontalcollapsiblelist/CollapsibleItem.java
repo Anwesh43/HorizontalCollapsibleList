@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Path;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -31,7 +32,12 @@ public class CollapsibleItem extends View {
             bitmap = Bitmap.createScaledBitmap(bitmap,w/10,w/10,true);
             collapsibleButton = new CollapsibleButton(w/10+w/20,h/2,w/10);
         }
+        canvas.save();
+        Path path = new Path();
+        path.addCircle(0,h/2,w/20, Path.Direction.CCW);
+        canvas.clipPath(path);
         canvas.drawBitmap(bitmap,0,h/2-w/20,paint);
+        canvas.restore();
         collapsibleButton.draw(canvas,paint);
         canvas.save();
         canvas.translate(w/5,h/2);
