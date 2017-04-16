@@ -25,7 +25,7 @@ public class HorizontalCollapsibleList {
         if(listLayout!=null && scrollView == null) {
             scrollView = new ScrollView(activity);
             scrollView.addView(listLayout,new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-            activity.setContentView(listLayout);
+            activity.setContentView(scrollView);
 
         }
     }

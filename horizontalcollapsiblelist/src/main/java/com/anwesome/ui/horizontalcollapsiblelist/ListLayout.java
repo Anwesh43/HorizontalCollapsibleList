@@ -15,6 +15,7 @@ public class ListLayout extends ViewGroup {
     private int w,h;
     public ListLayout(Context context) {
         super(context);
+        initDimension(context);
     }
     public void initDimension(Context context) {
         DisplayManager displayManager = (DisplayManager) context.getSystemService(Context.DISPLAY_SERVICE);
